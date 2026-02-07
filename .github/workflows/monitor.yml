@@ -1,0 +1,41 @@
+name: API Health Monitor
+
+on:
+  schedule:
+    # Run every 15 minutes
+    - cron: '*/15 * * * *'
+  workflow_dispatch:  # Allow manual triggers
+  push:
+    branches: [ main ]
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+    
+    - name: Run API Health Monitor
+      env:
+        GOOGLE_CREDS: ${{ secrets.GOOGLE_CREDS }}
+        GOOGLE_SHEET_NAME: ${{ secrets.GOOGLE_SHEET_NAME }}
+        API_ENDPOINTS: ${{ secrets.API_ENDPOINTS }}
+      run: |
+        python -m src.cli run
+    
+    - name: Create Summary Report
+      if: always()
+      run: |
+        echo "## API Health Monitor Results" >> $GITHUB_STEP_SUMMARY
+        echo "- Completed at $(date)" >> $GITHUB_STEP_SUMMARY
+        echo "- Check frequency: 15 minutes" >> $GITHUB_STEP_SUMMARY
+        echo "- Results exported to Google Sheets" >> $GITHUB_STEP_SUMMARY
