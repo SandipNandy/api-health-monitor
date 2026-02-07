@@ -3,7 +3,7 @@ name: API Health Monitor
 on:
   schedule:
     # Run every 15 minutes
-    - cron: '*/ * * * *'
+    # - cron: '*/ * * * *'
   workflow_dispatch:  # Allow manual triggers
   push:
     branches: [ main ]
