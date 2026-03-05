@@ -14,6 +14,7 @@ class Config:
     
     @staticmethod
     def get_api_endpoints() -> List[str]:
+        
         """Get list of API endpoints to monitor."""
         endpoints = os.getenv('API_ENDPOINTS')
         return eval(endpoints)
