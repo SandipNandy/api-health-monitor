@@ -5,7 +5,6 @@ import os
 from .config import Config
 
 class GoogleSheetsExporter:
-    
     """Export monitoring results to Google Sheets."""
     
     def __init__(self):
