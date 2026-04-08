@@ -4,7 +4,6 @@ from dotenv import load_dotenv
 from typing import Dict, Any, List
 
 load_dotenv()
-
 class Config:
     """Configuration manager for the API health monitor."""
     
