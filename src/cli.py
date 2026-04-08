@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 """
 CLI Interface for API Health Monitor
