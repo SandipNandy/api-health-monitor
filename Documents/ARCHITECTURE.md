@@ -1,4 +1,5 @@
 # System Architecture
+
 ## Overview
 ```mermaid
 graph TB
