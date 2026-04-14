@@ -7,7 +7,6 @@ No import issues!
 import requests
 
 import time
-
 import json
 import os
 import gspread
