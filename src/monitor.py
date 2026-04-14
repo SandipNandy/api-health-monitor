@@ -10,7 +10,6 @@ class APIMonitor:
     
     def __init__(self):
         self.thresholds = Config.get_thresholds()
-    
     def check_endpoint(self, url: str) -> Dict[str, Any]:
         """
         Check a single API endpoint.
