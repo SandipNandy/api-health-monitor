@@ -8,6 +8,7 @@ CLI Interface for API Health Monitor
 import argparse
 
 import sys
+
 from .main import run_monitoring_cycle
 
 def parse_args():
