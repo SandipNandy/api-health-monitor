@@ -3,7 +3,6 @@
 API Health Monitor - Main Entry Point
 TPM Portfolio Project
 """
-
 import schedule
 import time
 from datetime import datetime
