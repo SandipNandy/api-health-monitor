@@ -1,5 +1,4 @@
 
-
 # API Health Monitoring System 🚀
 
 A production-ready API health monitoring system that demonstrates Solutions Engineer skills including cross-functional collaboration, technical execution, and stakeholder management.
